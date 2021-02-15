@@ -27,7 +27,7 @@ class FoodApp extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'Det här behöver du:',
+                  'I säsong just nu: ',
                   style: TextStyle(
                     color: Colors.grey[800],
                     fontSize: 18,
@@ -52,10 +52,10 @@ class FoodApp extends StatelessWidget {
     );
 
     return MaterialApp(
-      title: 'Recept.se',
+      title: 'Mat.se',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Recept.se'),
+          title: Text('Mat.se'),
           backgroundColor: Colors.green[400],
           leading: IconButton(
               icon: Icon(Icons.menu),
@@ -73,7 +73,7 @@ class FoodApp extends StatelessWidget {
             ),
           ],
         ),
-        body: Column(
+        body: ListView(
           children: [
             Image.asset(
               'veggies.jpg',
@@ -85,16 +85,53 @@ class FoodApp extends StatelessWidget {
             textSection,
           ],
         ),
-        backgroundColor: Colors.green[300],
         floatingActionButton: FloatingActionButton(
-          tooltip: 'Like',
-          child: Icon(Icons.favorite),
-          onPressed: () {
-            print('i like this');
-          },
-          backgroundColor: Colors.green[200],
-        ),
+            child: FavoriteWidget(),
+            onPressed: () {},
+            backgroundColor: Colors.green[100]),
+        backgroundColor: Colors.green[300],
       ),
+    );
+  }
+}
+
+class FavoriteWidget extends StatefulWidget {
+  @override
+  _FavoriteWidgetState createState() => _FavoriteWidgetState();
+}
+
+class _FavoriteWidgetState extends State<FavoriteWidget> {
+  bool _isFavorited = true;
+
+  // togglar likeknappen
+  void _toggleFavorite() {
+    setState(() {
+      if (_isFavorited) {
+        _isFavorited = false;
+      } else {
+        _isFavorited = true;
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Container(
+          padding: EdgeInsets.all(0),
+          child: IconButton(
+            padding: EdgeInsets.all(0),
+            alignment: Alignment.center,
+            icon: (_isFavorited
+                ? Icon(Icons.favorite)
+                : Icon(Icons.favorite_border_outlined)),
+            color: Colors.red[800],
+            onPressed: _toggleFavorite,
+          ),
+        ),
+      ],
     );
   }
 }
