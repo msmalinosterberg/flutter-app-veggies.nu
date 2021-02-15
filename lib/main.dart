@@ -60,12 +60,16 @@ class FoodApp extends StatelessWidget {
           leading: IconButton(
               icon: Icon(Icons.menu),
               tooltip: 'Navigation menu',
-              onPressed: null),
+              onPressed: () {
+                print('menu open');
+              }),
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.search),
               tooltip: 'Search',
-              onPressed: null,
+              onPressed: () {
+                print('searching...');
+              },
             ),
           ],
         ),
@@ -85,7 +89,9 @@ class FoodApp extends StatelessWidget {
         floatingActionButton: FloatingActionButton(
           tooltip: 'Like',
           child: Icon(Icons.favorite),
-          onPressed: null,
+          onPressed: () {
+            print('i like this');
+          },
           backgroundColor: Colors.green[200],
         ),
       ),
