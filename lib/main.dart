@@ -52,11 +52,17 @@ class FoodApp extends StatelessWidget {
               title: Text('Inköpslista'), backgroundColor: Colors.grey[800]),
           body: Column(
             children: [
+              Image.asset(
+                'veggies.jpg',
+                width: 600,
+                height: 240,
+                fit: BoxFit.cover,
+              ),
               titleSection,
               textSection,
             ],
           ),
-          backgroundColor: Colors.grey[300]),
+          backgroundColor: Colors.green[300]),
     );
   }
 }
