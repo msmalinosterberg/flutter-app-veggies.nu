@@ -6,7 +6,7 @@ class FoodApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget titleSection = Container(
-      padding: const EdgeInsets.all(40),
+      padding: const EdgeInsets.all(32),
       child: Row(
         children: [
           Expanded(
@@ -16,9 +16,9 @@ class FoodApp extends StatelessWidget {
               children: [
                 /*2*/
                 Container(
-                  padding: const EdgeInsets.all(70),
+                  padding: const EdgeInsets.all(10),
                   child: Text(
-                    'Veckohandling',
+                    '',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 25,
@@ -27,7 +27,7 @@ class FoodApp extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'Vad ska jag köpa?',
+                  'Det här behöver du:',
                   style: TextStyle(
                     color: Colors.grey[800],
                     fontSize: 18,
@@ -42,27 +42,40 @@ class FoodApp extends StatelessWidget {
 
     Widget textSection = Container(
       padding: const EdgeInsets.all(32),
-      child: Text('Här ska listan ligga'),
+      child: Text(
+          'Lorem Ipsum is simply dummy text of the printing and'
+          'typesett ing industry.Lorem Ipsum is simply dummy text of the printing'
+          'and typesetting industry. Lorem Ipsum has been the industrys standard'
+          'dummy text ever since the 1500s, when an unknown printer took a galley'
+          'of type and scrambled it to make a type specimen book.',
+          softWrap: true),
     );
 
     return MaterialApp(
-      title: 'Inköpslista',
+      title: 'Recept.se',
       home: Scaffold(
-          appBar: AppBar(
-              title: Text('Inköpslista'), backgroundColor: Colors.grey[800]),
-          body: Column(
-            children: [
-              Image.asset(
-                'veggies.jpg',
-                width: 600,
-                height: 240,
-                fit: BoxFit.cover,
-              ),
-              titleSection,
-              textSection,
-            ],
-          ),
-          backgroundColor: Colors.green[300]),
+        appBar:
+            AppBar(title: Text('Recept.se'), backgroundColor: Colors.grey[800]),
+        body: Column(
+          children: [
+            Image.asset(
+              'veggies.jpg',
+              width: 600,
+              height: 240,
+              fit: BoxFit.cover,
+            ),
+            titleSection,
+            textSection,
+          ],
+        ),
+        backgroundColor: Colors.green[300],
+        floatingActionButton: FloatingActionButton(
+          tooltip: 'Like',
+          child: Icon(Icons.favorite),
+          onPressed: null,
+          backgroundColor: Colors.green[200],
+        ),
+      ),
     );
   }
 }
