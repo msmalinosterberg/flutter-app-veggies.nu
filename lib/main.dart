@@ -6,7 +6,7 @@ class FoodApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget titleSection = Container(
-      padding: const EdgeInsets.all(32),
+      padding: const EdgeInsets.all(40),
       child: Row(
         children: [
           Expanded(
@@ -16,27 +16,35 @@ class FoodApp extends StatelessWidget {
               children: [
                 /*2*/
                 Container(
-                  padding: const EdgeInsets.only(bottom: 8),
+                  padding: const EdgeInsets.all(70),
                   child: Text(
                     'Veckohandling',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                      color: Colors.green[700],
                     ),
                   ),
                 ),
                 Text(
                   'Vad ska jag köpa?',
                   style: TextStyle(
-                    color: Colors.grey[500],
+                    color: Colors.grey[800],
+                    fontSize: 18,
                   ),
                 ),
               ],
             ),
           ),
         ],
-        // Nästa rad
       ),
     );
+
+    Widget textSection = Container(
+      padding: const EdgeInsets.all(32),
+      child: Text('Här ska listan ligga'),
+    );
+
     return MaterialApp(
       title: 'Inköpslista',
       home: Scaffold(
@@ -45,6 +53,7 @@ class FoodApp extends StatelessWidget {
           body: Column(
             children: [
               titleSection,
+              textSection,
             ],
           ),
           backgroundColor: Colors.grey[300]),
