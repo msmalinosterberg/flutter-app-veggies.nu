@@ -54,8 +54,21 @@ class FoodApp extends StatelessWidget {
     return MaterialApp(
       title: 'Recept.se',
       home: Scaffold(
-        appBar:
-            AppBar(title: Text('Recept.se'), backgroundColor: Colors.grey[800]),
+        appBar: AppBar(
+          title: Text('Recept.se'),
+          backgroundColor: Colors.green[400],
+          leading: IconButton(
+              icon: Icon(Icons.menu),
+              tooltip: 'Navigation menu',
+              onPressed: null),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.search),
+              tooltip: 'Search',
+              onPressed: null,
+            ),
+          ],
+        ),
         body: Column(
           children: [
             Image.asset(
