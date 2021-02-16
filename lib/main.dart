@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_list/likebutton.dart';
 
 void main() => runApp(FoodApp());
 
@@ -52,10 +53,10 @@ class FoodApp extends StatelessWidget {
     );
 
     return MaterialApp(
-      title: 'Mat.se',
+      title: 'Veggies.nu',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Mat.se'),
+          title: Text('Veggies.nu'),
           backgroundColor: Colors.green[400],
           leading: IconButton(
               icon: Icon(Icons.menu),
@@ -95,45 +96,4 @@ class FoodApp extends StatelessWidget {
   }
 }
 
-// 
-
-class FavoriteWidget extends StatefulWidget {
-  @override
-  _FavoriteWidgetState createState() => _FavoriteWidgetState();
-}
-
-class _FavoriteWidgetState extends State<FavoriteWidget> {
-  bool _isFavorited = true;
-
-  // togglar likeknappen
-  void _toggleFavorite() {
-    setState(() {
-      if (_isFavorited) {
-        _isFavorited = false;
-      } else {
-        _isFavorited = true;
-      }
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Container(
-          padding: EdgeInsets.all(0),
-          child: IconButton(
-            padding: EdgeInsets.all(0),
-            alignment: Alignment.center,
-            icon: (_isFavorited
-                ? Icon(Icons.favorite)
-                : Icon(Icons.favorite_border_outlined)),
-            color: Colors.red[800],
-            onPressed: _toggleFavorite,
-          ),
-        ),
-      ],
-    );
-  }
-}
+//
