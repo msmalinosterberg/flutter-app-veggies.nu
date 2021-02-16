@@ -1,4 +1,4 @@
-# food_list
+# flutter-app-veggies.nu
 
 A new Flutter project.
 
