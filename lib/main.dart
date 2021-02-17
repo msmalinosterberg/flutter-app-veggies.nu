@@ -88,7 +88,7 @@ class FoodApp extends StatelessWidget {
         ),
         floatingActionButton: FloatingActionButton(
             child: FavoriteWidget(),
-            onPressed: () {},
+            onPressed: null,
             backgroundColor: Colors.green[100]),
         backgroundColor: Colors.green[300],
       ),
