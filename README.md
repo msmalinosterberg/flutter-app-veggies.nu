@@ -1,5 +1,10 @@
 # flutter-app-veggies.nu
 
+Inlämningsuppgift JavaScript fördjupning 40yhp. Feb 2021.
+Presentera ett ramverk och sätta upp ett ”proof of concept”. Jag valde Flutter. 
+
+--- 
+
 ## 1. Download SDK
 Download Flutter SDK, extract the "Flutter" folder and put somewhere on your machine https://flutter.dev/docs/get-started/install
 
