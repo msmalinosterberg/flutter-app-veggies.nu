@@ -8,11 +8,16 @@ Presentera ett ramverk och sätta upp ett ”proof of concept”. Jag valde Flut
 ## 1. Download SDK
 Download Flutter SDK, extract the "Flutter" folder and put somewhere on your machine https://flutter.dev/docs/get-started/install
 
+$ cd ~/development
+$ unzip ~/Downloads/flutter_macos_2.0.1-stable.zip
+
 ## 2. Add path
 Add path for 'location/flutter/bin'
+$ export PATH="$PATH:`pwd`/flutter/bin"
 
 ## 3. Check dependencies
-flutter doctor
+Kör följande kommando för att se om du behöver ytterligare dependencies. 
+$ flutter doctor
 
 ## 4. Install Xcode (Mac)
 https://developer.apple.com/xcode/
@@ -22,9 +27,10 @@ sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
 sudo xcodebuild -runFirstLaunch
 
 ## 6. Test iOS Simulator (Mac)
-open -a Simulator
+ $ open -a Simulator
 
 ---
+All info hittar du här: https://flutter.dev/docs/get-started/ 
 
 För att skapa ett eget Flutter projekt: 
 ## 7. Install Flutter plugin
